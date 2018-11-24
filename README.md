@@ -1,67 +1,10 @@
-# Eyedea Webmaster Kit
+# Know-Flow
 
-![npm](https://img.shields.io/npm/l/express.svg)
-![npm](https://img.shields.io/badge/install-npm-blue.svg)
+Many organizations (including ours) are struggling with the imbalance in information flow. Why did we decide to create another platform for knowledge sharing? Because we want everybody to have an equal opportunity to learn. Our experience shows that group meetings might be ineffective.  On the other hand, online courses are usually long, and finding something useful is hard. Our solution is based on short user-created stories and easy to use communication loop between mentor and student. How does it work? Just grab a coffee, select your story and start learning. Before you finish your beverage, you'll gain some new knowledge. It's that fast & easy.  If you don't understand everything - mark your problems and your mentor will try to help you.
 
-## Getting started
+## Project created during HackYeah 2018 by:
 
-**Install dependencies**:
-```sh
-npm
-```
-
-**Run development mode**:
-
-```sh
-# npm run dev <workspace>
-npm run dev website
-```
-
-**Build single workspace**:
-
-```sh
-# npm run build <workspace>
-npm run build website
-```
-
-## Adding new workspaces
-
-Create `workspaces/<workspace_name>/index.tsx` and run:
-
-```sh
-npm run dev <workspace_name>
-```
-
-## Custom workspace webpack config
-
-Create `workspaces/<workspace_name>/webpack.config.js`:
-
-```js
-module.exports = function(config) {
-  // Modify config and return it
-  return config
-}
-```
-## Configure service worker for production
-
-To setup service worker, during build set `PUBLIC_PATH` to website URL.
-
-```sh
-PUBLIC_PATH=https://website.example npm run build website
-```
-
-## Configure error tracking with Sentry
-
-To setup error tracking, set `SENTRY_DSN` environment variable to your sentry project url.
-
-```sh
-SENTRY_DSN=https://XXXXXXXXX@sentry.io/XXXXXXX
-```
-
-## Render application at sub directory
-
-To render app at sub directory, set `ROUTER_BASEPATH` environment variable the sub directory name.
-
-```sh
-ROUTER_BASEPATH=/sub-directory-name
-```
+* [Maciej Korsan](https://github.com/maciejkorsan])
+* [Konrad Kotelczuk](https://github.com/kkotelczuk)
+* [Maciej Kucharz](https://github.com/mkucharz])
+* [Kasper Mikiewicz](https://github.com/idered])
