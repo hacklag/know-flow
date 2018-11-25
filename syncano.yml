@@ -2,4 +2,4 @@ hosting:
   website:
     src: .build/website
     config:
-      browser_router: true
+      browser_router: false

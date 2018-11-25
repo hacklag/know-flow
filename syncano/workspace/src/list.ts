@@ -1,16 +1,15 @@
 import * as S from '@eyedea/syncano'
-import {MODELS} from '../constants'
 
 class Endpoint extends S.Endpoint {
   async run(
-    {users, response}: S.Core
+    {data, response}: S.Core
   ) {
     if (this.user === undefined) {
       return response.json({message: 'Unauthorized'}, 401)
     }
 
-    return users.fields(MODELS.user).first()
+    return data.workspace.where('author', this.user.id).list()
   }
 }
 
-export default ctx => new Endpoint(ctx)
+export default (ctx: S.Context) => new Endpoint(ctx)

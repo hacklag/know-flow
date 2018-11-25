@@ -1,0 +1,29 @@
+name: reaction
+description: Reactions api
+
+classes:
+  reaction:
+    - name: author
+      type: reference
+      target: user
+    - name: type
+      type: string
+
+endpoints:
+  add:
+    private: true
+    inputs:
+      required:
+        - type
+      properties:
+        type:
+          type: string
+  remove:
+    private: true
+    inputs:
+      required:
+        - id
+      properties:
+        id:
+          type: number
+          minimum: 1

@@ -10,7 +10,7 @@ export const UserStore = types
   })
   .views(self => ({
     get isLoggedIn(): boolean {
-      return Boolean(self.token && self.profile)
+      return Boolean(self.token)
     },
   }))
   .actions(self => ({
@@ -26,7 +26,7 @@ export const UserStore = types
       }
 
       try {
-        self.profile = yield syncano('api/user/profile')
+        self.profile = yield syncano('user/profile')
 
         Sentry.configureScope((scope) => {
           scope.setUser({

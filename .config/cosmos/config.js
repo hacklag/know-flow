@@ -16,7 +16,18 @@ module.exports = {
     config.module.rules.push({
         test: /\.tsx?$/,
         use: [
-          'babel-loader'
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              useBabel: true,
+              babelCore: '@babel/core',
+              transpileOnly: true,
+              useCache: true,
+              reportFiles: [
+                "workspaces/**/*.{ts,tsx}"
+              ]
+            }
+          }
         ]
       })
 

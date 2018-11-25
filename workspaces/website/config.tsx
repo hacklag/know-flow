@@ -1,7 +1,7 @@
 import {color, media, spacing} from '@shared/utils/css-helpers'
 import {Theme} from '@shared/utils/styled'
 
-export const WORKSPACE_TITLE = process.env.WORKSPACE_TITLE || 'Webmaster App'
+export const WORKSPACE_TITLE = process.env.WORKSPACE_TITLE || 'Know Flow'
 export const WORKSPACE_LANG = process.env.WORKSPACE_LANG || 'EN'
 export const SENTRY_DSN = process.env.SENTRY_DSN
 export const RELEASE = process.env.RELEASE

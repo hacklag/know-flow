@@ -154,30 +154,30 @@ export const Block = styled.div.attrs({})<Props>`
 
   /* Truncate */
   ${_ => _.truncate && css`
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: ${'nowrap'};
+    overflow: ${'hidden'};
+    text-overflow: ${'ellipsis'};
   `}
 
   /* No wrap */
-  ${_ => _.nowrap && css`white-space: nowrap;`}
+  ${_ => _.nowrap && css`white-space: ${`nowrap`};`}
 
   /* Flex */
-  ${_ => _.layout && css`display: flex;`}
+  ${_ => _.layout && css`display: ${`flex`};`}
   ${_ => _.flex && css`
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
+    flex-grow: ${1};
+    flex-shrink: ${1};
+    flex-basis: ${'auto'};
   `}
   ${_ => _.centered && css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: ${'flex'};
+    align-items: ${'center'};
+    justify-content: ${'center'};
   `}
-  ${_ => _.horizontal && !_.reverse && css`flex-direction: row !important;`}
-  ${_ => _.horizontal && _.reverse && css`flex-direction: row-reverse !important;`}
-  ${_ => _.vertical && !_.reverse && css`flex-direction: column !important;`}
-  ${_ => _.vertical && _.reverse && css`flex-direction: column-reverse !important;`}
+  ${_ => _.horizontal && !_.reverse && css`flex-direction: ${`row`} !important;`}
+  ${_ => _.horizontal && _.reverse && css`flex-direction: ${`row-reverse`} !important;`}
+  ${_ => _.vertical && !_.reverse && css`flex-direction: ${`column`} !important;`}
+  ${_ => _.vertical && _.reverse && css`flex-direction: ${`column-reverse`} !important;`}
   ${_ => _.alignItems && css`align-items: ${_.alignItems} !important;`}
   ${_ => _.alignSelf && css`align-self: ${_.alignSelf} !important;`}
   ${_ => _.justifyContent && css`justify-content: ${_.justifyContent} !important;`}

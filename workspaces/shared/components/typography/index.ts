@@ -1,0 +1,5 @@
+export {default as Text} from './text'
+export {default as Heading} from './heading'
+export {default as Paragraph} from './paragraph'
+export {default as Link} from './link'
+export {default as Strong} from './strong'
