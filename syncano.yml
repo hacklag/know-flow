@@ -3,3 +3,6 @@ hosting:
     src: .build/website
     config:
       browser_router: true
+  landing:
+    src: workspaces/landing
+      
