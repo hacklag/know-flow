@@ -152,21 +152,21 @@ workflows:
       - build-website:
           requires:
             - install
-      - test-lint:
-          requires:
-            - install
-      - test-unit:
-          requires:
-            - install
+      # - test-lint:
+      #     requires:
+      #       - install
+      # - test-unit:
+      #     requires:
+      #       - install
       - deploy-staging-sockets:
           requires:
             - install
           filters:
             branches:
               only: master
-      - test-size:
-          requires:
-            - build-website
+      # - test-size:
+      #     requires:
+      #       - build-website
       - upload-staging-website:
           requires:
             - build-website
@@ -174,9 +174,9 @@ workflows:
             branches:
               only: master
       - deploy-sockets:
-          requires:
-            - test-lint
-            - test-unit
+          # requires:
+          #   - test-lint
+          #   - test-unit
           filters:
             branches:
               only: production
