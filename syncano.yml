@@ -2,4 +2,7 @@ hosting:
   website:
     src: .build/website
     config:
-      browser_router: false
+      browser_router: true
+  landing:
+    src: workspaces/landing
+
