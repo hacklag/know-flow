@@ -1,0 +1,55 @@
+name: story
+description: Stories api
+
+classes:
+  reaction: []
+  workspace: []
+  story:
+    - name: title
+      type: text
+    - name: content
+      type: object
+    - name: author
+      type: reference
+      target: user
+      filter_index: true
+    - name: reactions
+      type: relation
+      target: reaction
+    - name: workspace
+      type: reference
+      target: workspace
+      filter_index: true
+    - name: tags
+      type: array
+      filter_index: true
+    - name: seenBy
+      type: relation
+      target: user
+
+endpoints:
+  list:
+    inputs:
+      required:
+        - workspace
+      properties:
+        workspace:
+          type: number
+          minimum: 1
+  single:
+    inputs:
+      required:
+        - story
+      properties:
+        story:
+          type: number
+          minimum: 1
+  create:
+    inputs:
+      required:
+        - content
+        - workspace
+      properties:
+        workspace:
+          type: number
+          minimum: 1

@@ -5,6 +5,7 @@ const Field = {
   name: types.string,
   placeholder: types.maybe(types.string),
   value: types.frozen(),
+  formatValue: undefined,
 }
 
 export const Form = types
@@ -48,14 +49,17 @@ export const Form = types
     },
     field(name: string): any {
       const {t} = getRoot<any>(self)
-      const {placeholder} = self.fields.get(name)
+      const {placeholder, formatValue, ...props} = self.fields.get(name)
 
       return {
-        ...self.fields.get(name),
+        ...props,
         name,
         id: name,
-        onChange: self.handleChange,
         placeholder: t ? t`${placeholder}` : placeholder,
+        // tslint:disable-next-line:max-line-length
+        onChange: formatValue
+          ? (value: any) => self.handleChange(name, formatValue(value))
+          : self.handleChange,
       }
     },
   }))

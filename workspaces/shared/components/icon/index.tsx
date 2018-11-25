@@ -39,6 +39,8 @@ import {library} from '@fortawesome/fontawesome'
 
 const fabFacebookF = require('@fortawesome/fontawesome-free-brands/faFacebookF')
 
+const fasTimesCircle = require('@fortawesome/fontawesome-pro-solid/faTimesCircle')
+
 library.add(
-  fabFacebookF
+  fabFacebookF, fasTimesCircle
 )

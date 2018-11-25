@@ -1,0 +1,35 @@
+name: workspace
+description: Workspaces api
+
+classes:
+  reaction: []
+  workspace:
+    - name: name
+      type: string
+    - name: author
+      type: reference
+      target: user
+      filter_index: true
+    - name: members
+      type: relation
+      target: user
+
+endpoints:
+  is-member: {}
+  list: {}
+  single:
+    inputs:
+      required:
+        - workspace
+      properties:
+        workspace:
+          type: number
+          minimum: 1
+  create:
+    inputs:
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          minimum: 1

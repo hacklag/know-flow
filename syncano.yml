@@ -5,4 +5,4 @@ hosting:
       browser_router: true
   landing:
     src: workspaces/landing
-      
+

@@ -27,18 +27,18 @@ module.exports = () => merge(common, {
     compress: true,
     hot: true
   },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        exclude: [/node_modules/],
-        loader: 'stylelint-custom-processor-loader',
-        options: {
-          configPath: './.config/stylelint.json'
-        }
-      }
-    ]
-  },
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.tsx?$/,
+  //       exclude: [/node_modules/],
+  //       loader: 'stylelint-custom-processor-loader',
+  //       options: {
+  //         configPath: './.config/stylelint.json'
+  //       }
+  //     }
+  //   ]
+  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({

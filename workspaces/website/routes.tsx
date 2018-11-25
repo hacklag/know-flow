@@ -19,7 +19,7 @@ export class Routes extends React.Component<Props> {
   render() {
     return (
       <Router basepath={ROUTER_BASEPATH}>
-        <routes.Index path="/" />
+        <routes.Index path="/*" />
         <routes.Auth.Login path="/auth/login" />
         <routes.Auth.Register path="/auth/register" />
         <routes.Auth.Logout path="/auth/logout" />
@@ -31,7 +31,7 @@ export class Routes extends React.Component<Props> {
 
 function getRoutes() {
   return {
-    Index:  loadable(() => import('@website/pages/landing')),
+    Index:  loadable(() => import('@website/pages/dashboard')),
     Missing: loadable(() => import('@website/pages/missing')),
     Auth: {
       Login:  loadable(() => import('@website/pages/auth/login')),

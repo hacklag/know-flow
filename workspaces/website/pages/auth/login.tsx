@@ -1,9 +1,11 @@
 import * as Router from '@reach/router'
-import {Button, Input, InputList, Link, Title} from '@shared/components'
+import {InputList, Title} from '@shared/components'
+import {Heading} from '@shared/components/typography'
 import {isEmail} from '@shared/utils/is-email'
-import {AuthForm, Heading} from '@website/pages/auth/styled'
+import {AuthForm} from '@website/pages/auth/styled'
 import {WithStore} from '@website/types'
 import {as} from '@website/utils/as'
+import {Button, Pane, TextInput} from 'evergreen-ui'
 import {observable} from 'mobx'
 import {inject, observer} from 'mobx-react'
 import * as React from 'react'
@@ -34,17 +36,33 @@ class Login extends React.Component<WithStore> {
       <React.Fragment>
         <Title>Login</Title>
         <AuthForm onSubmit={this.handleSubmit}>
-          <Heading>{t`Welcome back!`}</Heading>
+          <Heading size={600}>{t`Welcome back!`}</Heading>
 
-          <InputList errors={this.errors}>
-            <Input value={this.form.value('username')} {...this.form.field('username')} />
-            <Input value={this.form.value('password')} {...this.form.field('password')}/>
+          <InputList errors={this.errors} mt="md">
+            <TextInput height={40} width="100%" value={this.form.value('username')} {...this.form.field('username')}/>
+            <TextInput height={40} width="100%" value={this.form.value('password')} {...this.form.field('password')}/>
           </InputList>
 
-          <Button mt="md" variant="primary" loading={this.isLoading.get()} disabled={!this.allowSubmit}>
-            {t`Sign in`}
-          </Button>
-          <Link mt="xxs" to="/auth/register">{t`Create account`}</Link>
+          <Pane marginTop="16px">
+            <Button
+              height={40}
+              type="submit"
+              isLoading={this.isLoading.get()}
+              disabled={!this.allowSubmit}
+            >
+              {t`Sign in`}
+            </Button>
+
+            <Button
+              is="a"
+              height={40}
+              appearance="minimal"
+              marginLeft="16px"
+              onClick={() => Router.navigate('/auth/register')}
+            >
+              {t`No account?`}
+            </Button>
+          </Pane>
         </AuthForm>
       </React.Fragment>
     )
