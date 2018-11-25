@@ -125,6 +125,7 @@ jobs:
           command: |
             npx syncano-cli hosting sync website
             npx syncano-cli hosting config website -b true # --cname YOUR_CNAME
+            npx syncano-cli hosting sync landing
 
   deploy-sockets:
     working_directory: ~/repo
