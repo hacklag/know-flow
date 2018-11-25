@@ -13,7 +13,11 @@ TLDR
 * you can create company standards and have them in one place
 * we support various types of notes: simple list of steps, code snippets, videos and audio files
 
+![](assets/app.gif)
+
+
 You can see our prototype here: [Know-Flow demo](https://landing--know-flow-staging.syncano.site)
+
 
 
 
